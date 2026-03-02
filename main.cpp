@@ -1,8 +1,10 @@
 #include <iostream>
 #include <string>
+#include <clocale>
 
 using namespace std;
 
+// Шифрование пароля (шифр Цезаря)
 string encrypt(const string& text, int shift) {
     string result = "";
     for (char c : text) {
@@ -10,7 +12,7 @@ string encrypt(const string& text, int shift) {
     }
     return result;
 }
-
+// Расшифровка пароля
 string decrypt(const string& text, int shift) {
     string result = "";
     for (char c : text) {
@@ -18,8 +20,9 @@ string decrypt(const string& text, int shift) {
     }
     return result;
 }
-
 int main() {
+    setlocale(LC_ALL, "Russian");
+
     string password;
     const int SHIFT_KEY = 3;
 
